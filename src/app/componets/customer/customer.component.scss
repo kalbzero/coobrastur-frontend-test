@@ -1,0 +1,25 @@
+@import '../../../assets/stylesheet/colors.scss';
+
+.customer {
+    &__title {
+        font-weight: bold;
+        color: $color-primary;
+        
+    }
+    &__icon {
+        margin-right: 1rem;
+    }
+    &__line {
+        border: 1px solid $color-gray-light;
+    }
+    &__list {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    &__item {
+        border: 2px solid $color-gray-light;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        display: flex;
+    }
+}

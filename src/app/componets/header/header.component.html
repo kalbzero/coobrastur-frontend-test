@@ -1,0 +1,7 @@
+<div *ngIf="isLoggedIn$ | async" class="header">
+    <div><img src="../../../assets/logo-header.png" alt="Logo header"></div>
+    <div>
+        <button class="btn header__new" (click)="newCustomer()"><img src="../../../assets/plus.svg" alt="plus icon"><span>Novo Cliente</span></button>
+        <a href="#" (click)="onLogout()" class="header__logout"><img src="../../../assets/logout.svg" alt="logout icon"><span>Sair</span></a>
+    </div>
+</div>

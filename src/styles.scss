@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    height: 100vh;
+    padding: 0;
+}
+.container {
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    height: 2.5em;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}

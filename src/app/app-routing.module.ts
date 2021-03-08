@@ -1,21 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserComponent } from './componets/user/user.component';
-import { UserListComponent } from './componets/user/user-list/user-list.component';
+import { CustomerComponent } from './componets/Customer/Customer.component';
+import { CustomerFormComponent } from './componets/Customer/Customer-form/Customer-form.component';
+import { LoginComponent } from './componets/login/login.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    component: UserComponent
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path: '', 
+    component: CustomerComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'add',
-    component: UserListComponent
+    component: CustomerFormComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'edit/:id',
-    component: UserListComponent
+    component: CustomerFormComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'view/:id',
+    component: CustomerFormComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

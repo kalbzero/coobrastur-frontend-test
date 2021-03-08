@@ -1,0 +1,28 @@
+<div class="login">
+    <div class="login__box">
+        <div class="login__logo">
+            <img src="../../../assets/logo.png" alt="logo">
+        </div>
+        <div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="login__group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email"class="login__input" formControlName="email">
+                    <div class="login__error" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+                        <span>Email é obrigatório!</span>
+                    </div>
+                </div>
+    
+                <div class="login__group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password"class="login__input" formControlName="password">
+                    <div class="login__error" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                        <span>Senha é obrigatória!</span>
+                    </div>
+                </div>
+    
+                <button [disabled]="!loginForm.valid" type="submit" class="btn login__submit">Acessar o sistema</button>
+            </form>
+        </div>
+    </div>
+</div>

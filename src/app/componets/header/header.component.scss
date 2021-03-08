@@ -1,0 +1,31 @@
+@import '../../../assets/stylesheet/colors.scss';
+.header {
+    background-color: $color-primary;
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    &__new {
+        background-color: $color-white;
+        border: 1px solid #F8FCFF;
+        img {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__logout {
+        margin-left: 2rem;
+
+        img {
+            margin-right: 0.3rem;
+            width: 15px;
+        }
+        span {
+            color: $color-white;
+        }
+    }
+}
