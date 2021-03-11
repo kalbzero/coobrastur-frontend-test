@@ -10,13 +10,16 @@ import { HeaderComponent } from './componets/header/header.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './service/auth.service';
 import { LoginComponent } from './componets/login/login.component';
-import { CustomerModule } from './componets/customer/customer.module';
+import { CustomerFormComponent } from './componets/Customer/Customer-form/Customer-form.component';
+import { CustomerComponent } from './componets/Customer/Customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    CustomerComponent,
+    CustomerFormComponent
   ],
   imports: [
     BrowserModule,

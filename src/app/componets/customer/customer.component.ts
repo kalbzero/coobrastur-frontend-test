@@ -43,13 +43,12 @@ export class CustomerComponent implements OnInit {
       this.initial = this.initial - 5;
       this.final = this.final - 5;
       this.sliceCustomers = this.customers.slice(this.initial, this.final);
-      
+
     } else if(this.initial < 5){
       this.initial = 0;
       this.final = 5;
       this.sliceCustomers = this.customers.slice(this.initial, this.final);
     }
-    console.log("before: "+ this.initial);
   }
 
   onAfter(){
@@ -63,6 +62,5 @@ export class CustomerComponent implements OnInit {
       this.initial = this.final + 5 > this.countCustomers? this.initial = this.countCustomers - 5 : this.initial = this.initial + 5;
       this.sliceCustomers = this.customers.slice(this.initial, this.final);
     }
-    console.log("after: "+ this.final);
   }
 }

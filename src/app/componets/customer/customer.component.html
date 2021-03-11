@@ -3,23 +3,22 @@
     <hr class="customer__line">
     <div class="customer__list">
         <div *ngFor="let c of sliceCustomers">
-            
             <div class="customer__item">
                 <div class="customer__item-left">
                     <img src="{{c.avatar}}" alt="profile" class="customer__img">
                     <span class="customer__name">{{c.first_name}} {{c.last_name}}</span>
-                    <span>{{c.email}}</span>
+                    <span class="customer__email">{{c.email}}</span>
                 </div>
                 <div class="customer__item-right">
-                    <button type="click" class="btn customer__edit" (click)="onEdit(c.id)">Editar</button>
+                    <button type="click" class="btn btn-default" (click)="onEdit(c.id)">Editar</button>
                 </div>
             </div>
         </div>
     </div>
     <p>Total: {{countCustomers}} clientes</p>
     <div class="customer__pagination">
-        <button class="btn customer__before"(click)="onBefore()">Anterior</button>
-        <button class="btn customer__after"(click)="onAfter()">Próximo</button>
+        <button class="btn btn-default customer__before"(click)="onBefore()">Anterior</button>
+        <button class="btn btn-default"(click)="onAfter()">Próximo</button>
 
     </div>
 </div>

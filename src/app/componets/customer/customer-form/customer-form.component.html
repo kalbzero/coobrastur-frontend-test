@@ -1,1 +1,29 @@
-<p>customer-form works!</p>
+<div class="container">
+    <h2 class="customer-form__title"><img class="customer-form__icon" src="../../../assets/user.svg">Painel de clientes</h2>
+    <hr class="customer-form__line">
+    <p class="customer-form__subtitle">{{pageTitle}} cliente</p>
+    <p class="customer-form__text">Informe os campos a seguir para cadastrar um novo cliente:</p>
+
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="customer-form__group">
+            <label class="customer-form__label">Nome</label>
+            <input type="text" name="name" id="name" class="customer-form__input" formControlName="name">
+            <div class="customer-form__error" *ngIf="customerForm.controls['name'].invalid && (customerForm.controls['name'].dirty || customerForm.controls['name'].touched)">
+                <span>Nome é obrigatório!</span>
+            </div>
+        </div>
+
+        <div class="customer-form__group">
+            <label class="customer-form__label">Profissão</label>
+            <input type="text" name="job" id="job" class="customer-form__input" formControlName="job">
+            <div class="customer-form__error" *ngIf="customerForm.controls['job'].invalid && (customerForm.controls['job'].dirty || customerForm.controls['job'].touched)">
+                <span>Prosissão é obrigatório!</span>
+            </div>
+        </div>
+
+        <div class="customer-form__buttons">
+            <button type="submit" [disabled]="!customerForm.valid" class="btn btn-secondary customer-form__register">Cadastrar</button>
+            <button (click)="goBack()" class="btn btn-default">Voltar</button>
+        </div>
+    </form>
+</div>

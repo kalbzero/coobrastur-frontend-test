@@ -14,22 +14,17 @@ const routes: Routes = [
   {
     path: '', 
     component: CustomerComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'add',
     component: CustomerFormComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'edit/:id',
     component: CustomerFormComponent,
-    // canActivate: [AuthGuard]
-  },
-  {
-    path: 'view/:id',
-    component: CustomerFormComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   }
 ];
 

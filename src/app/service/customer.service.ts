@@ -5,6 +5,7 @@ import { Observable, forkJoin } from "rxjs";
 
 import { Customer } from '../interfaces/customer';
 import { RequestApi } from '../interfaces/request';
+import { RequestCustomer } from '../interfaces/requestCustomer';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,12 +33,12 @@ export class CustomerService {
     return customers;
   }
 
-  getCustomerById(id: number): Observable<Customer>{
-    return this.http.get<Customer>(this.baseUrl+'users/'+id);
+  getCustomerById(id: number): Observable<RequestCustomer>{
+    return this.http.get<RequestCustomer>(this.baseUrl+'users/'+id);
   }
 
   createCustomer(customer: Customer): Observable<Customer>{
-    const url = this.baseUrl + '/users';
+    const url = this.baseUrl + 'users';
     const header = new HttpHeaders().set('Content-Type', 'application/json');
 
     const body = 'name=' + customer.name +
@@ -47,7 +48,7 @@ export class CustomerService {
   }
 
   updateCustomer(customer: Customer): Observable<Customer>{
-    const url = this.baseUrl + '/users/' +customer.id;
+    const url = this.baseUrl + 'users/' +customer.id;
     const header = new HttpHeaders().set('Content-Type', 'application/json');
     const body = 'name=' + customer.name +
                   '&job' + customer.job;
