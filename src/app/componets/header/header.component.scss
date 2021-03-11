@@ -28,4 +28,16 @@
             color: $color-white;
         }
     }
+    @media only screen and (max-width: 768px){
+        &__new {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 490px){
+        &__logout {
+            span {
+                display: none;
+            }
+        }
+    }
 }

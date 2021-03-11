@@ -20,6 +20,48 @@
         border: 2px solid $color-gray-light;
         padding-left: 1rem;
         padding-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
         display: flex;
+        justify-content: space-between;
+    }
+    &__item-left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+    }
+    &__item-right {
+        display: flex;
+        align-items: center;
+    }
+    &__img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+    }
+    &__name {
+        color: $color-primary;
+    }
+    &__edit, &__before, &__after {
+        border-color: $color-primary;
+        color: $color-primary;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__before {
+        margin-right: 2rem;
     }
 }

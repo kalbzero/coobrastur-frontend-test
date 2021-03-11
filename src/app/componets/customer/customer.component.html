@@ -2,8 +2,24 @@
     <h2 class="customer__title"><img class="customer__icon" src="../../../assets/user.svg">Painel de clientes</h2>
     <hr class="customer__line">
     <div class="customer__list">
-        <div class="customer__item">
-            <img src="" alt="profile">
+        <div *ngFor="let c of sliceCustomers">
+            
+            <div class="customer__item">
+                <div class="customer__item-left">
+                    <img src="{{c.avatar}}" alt="profile" class="customer__img">
+                    <span class="customer__name">{{c.first_name}} {{c.last_name}}</span>
+                    <span>{{c.email}}</span>
+                </div>
+                <div class="customer__item-right">
+                    <button type="click" class="btn customer__edit" (click)="onEdit(c.id)">Editar</button>
+                </div>
+            </div>
         </div>
+    </div>
+    <p>Total: {{countCustomers}} clientes</p>
+    <div class="customer__pagination">
+        <button class="btn customer__before"(click)="onBefore()">Anterior</button>
+        <button class="btn customer__after"(click)="onAfter()">Próximo</button>
+
     </div>
 </div>
