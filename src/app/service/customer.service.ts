@@ -42,7 +42,7 @@ export class CustomerService {
     const header = new HttpHeaders().set('Content-Type', 'application/json');
 
     const body = 'name=' + customer.name +
-                  '&job' + customer.job;
+                  '&job=' + customer.job;
 
     return this.http.post<Customer>(url, body, {headers: header});
   }
@@ -51,7 +51,7 @@ export class CustomerService {
     const url = this.baseUrl + 'users/' +customer.id;
     const header = new HttpHeaders().set('Content-Type', 'application/json');
     const body = 'name=' + customer.name +
-                  '&job' + customer.job;
+                  '&job=' + customer.job;
 
     return this.http.put<Customer>(url, body, {headers:header});
   }
